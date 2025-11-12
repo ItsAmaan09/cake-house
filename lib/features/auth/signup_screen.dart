@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/widgets/custom_button.dart';
 import '../../core/widgets/custom_textfield.dart';
+import '../../core/widgets/google_button.dart';
 import '../../routes/app_routes.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -39,6 +40,22 @@ class SignupScreen extends StatelessWidget {
               CustomButton(
                 text: "Sign Up",
                 onPressed: () => Navigator.pushReplacementNamed(context, AppRoutes.home),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: const [
+                  Expanded(child: Divider(color: Colors.grey)),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text("OR"),
+                  ),
+                  Expanded(child: Divider(color: Colors.grey)),
+                ],
+              ),
+              const SizedBox(height: 10),
+              GoogleButton(
+                onPressed: () {
+                },
               ),
               const SizedBox(height: 10),
               TextButton(
