@@ -27,6 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
     {'image': 'assets/cake2.jpg', 'name': 'Vanilla Delight', 'price': '12'},
     {'image': 'assets/cake3.jpg', 'name': 'Red Velvet', 'price': '18'},
     {'image': 'assets/cake4.jpg', 'name': 'Strawberry Crush', 'price': '14'},
+    {'image': 'assets/cake1.jpg', 'name': 'Chocolate Cake', 'price': '15'},
+    {'image': 'assets/cake2.jpg', 'name': 'Vanilla Delight', 'price': '12'},
+    {'image': 'assets/cake3.jpg', 'name': 'Red Velvet', 'price': '18'},
+    {'image': 'assets/cake4.jpg', 'name': 'Strawberry Crush', 'price': '14'},
   ];
 
   @override
