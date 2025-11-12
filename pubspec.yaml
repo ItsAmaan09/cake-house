@@ -20,3 +20,7 @@ flutter:
   assets:
     - assets/logo.png
     - assets/google_logo.png
+    - assets/cake1.jpg
+    - assets/cake2.jpg
+    - assets/cake3.jpg
+    - assets/cake4.jpg
