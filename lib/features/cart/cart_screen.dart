@@ -1,6 +1,8 @@
 import 'package:cake_house/core/theme/app_colors.dart';
 import 'package:cake_house/data/sample_cartdata.dart';
+import 'package:cake_house/features/cart/checkout_screen.dart';
 import 'package:cake_house/models/cartItem.dart';
+import 'package:cake_house/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatefulWidget {
@@ -216,7 +218,14 @@ class _CartScreenState extends State<CartScreen> {
                       const SizedBox(height: 12),
                       ElevatedButton(
                         onPressed: () {
-                          // TODO: go to checkout screen
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes.checkout,
+                            arguments: {
+                              'cartItems':cartItems,
+                              'total':totalPrice,
+                            }
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.primary,
