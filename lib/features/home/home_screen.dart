@@ -1,12 +1,15 @@
 import 'package:cake_house/data/sample_cake.dart';
 import 'package:cake_house/data/sample_categories.dart';
+import 'package:cake_house/features/home/cake_detail_screen.dart';
 import 'package:cake_house/models/cake.dart';
+import 'package:cake_house/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import 'widgets/category_chip.dart';
 import 'widgets/cake_card.dart';
 
 class HomeScreen extends StatefulWidget {
+
   const HomeScreen({super.key});
 
   @override
@@ -15,7 +18,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedCategory = 0;
-
   final List<String> categories = SampleCategories.all();
 
   final List<Cake> cakes = SampleCake.all();
@@ -96,11 +98,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   final cake = cakes[index];
                   return CakeCard(
-                    image: cake.image,
-                    name: cake.name,
-                    price: cake.price,
+                    cake: cake,
                     onTap: () {
-                      // TODO: Navigate to Cake Detail Screen
+                      Navigator.push(
+                        context,
+                        // AppRoutes.cakeDetail,
+                        // arguments: cake
+                        MaterialPageRoute(
+                          builder: (_) => CakeDetailScreen(cake: cake),
+                        ),
+                      );
                     },
                   );
                 },

@@ -1,17 +1,15 @@
+import 'package:cake_house/models/cake.dart';
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 
 class CakeCard extends StatelessWidget {
-  final String image;
-  final String name;
-  final String price;
+
+  final Cake cake;
   final VoidCallback onTap;
 
   const CakeCard({
     super.key,
-    required this.image,
-    required this.name,
-    required this.price,
+    required this.cake,
     required this.onTap,
   });
 
@@ -40,7 +38,7 @@ class CakeCard extends StatelessWidget {
                 top: Radius.circular(16),
               ),
               child: Image.asset(
-                image,
+                cake.image,
                 height: 120,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -54,7 +52,7 @@ class CakeCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    cake.name,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -65,7 +63,7 @@ class CakeCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$$price",
+                        "\₹${cake.price}",
                         style: const TextStyle(
                           color: AppColors.primary,
                           fontWeight: FontWeight.w600,
