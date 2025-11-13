@@ -1,4 +1,5 @@
 import 'package:cake_house/features/auth/signup_screen.dart';
+import 'package:cake_house/features/cart/cart_screen.dart';
 import 'package:cake_house/features/splash/splash_screen.dart';
 import 'package:cake_house/models/cake.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
   static const signup = '/signup';
   static const home = '/home';
   static const cakeDetail = '/cake_detail';
+  static const cartScreen = '/cart-screen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -27,6 +29,8 @@ class AppRoutes {
       case cakeDetail:
         final cake = settings.arguments as Cake;
         return MaterialPageRoute(builder: (_) => CakeDetailScreen(cake: cake));
+      case cartScreen:
+        return MaterialPageRoute(builder: (_)=> const CartScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(body: Center(child: Text("No route found"))),

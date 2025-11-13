@@ -1,5 +1,6 @@
 import 'package:cake_house/core/theme/app_colors.dart';
 import 'package:cake_house/models/cake.dart';
+import 'package:cake_house/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class CakeDetailScreen extends StatefulWidget {
@@ -30,7 +31,9 @@ class _CakeDetailScreenState extends State<CakeDetailScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.cartScreen);
+            },
             icon: Icon(Icons.shopping_cart_outlined, color: AppColors.textDark),
           ),
         ],
@@ -83,7 +86,7 @@ class _CakeDetailScreenState extends State<CakeDetailScreen> {
                       ),
                       SizedBox(width: 8),
                       Text(
-                        "\$${widget.cake.price}",
+                        "\₹${widget.cake.price.toInt()}",
                         style: TextStyle(
                           fontSize: 18,
                           color: AppColors.primary,

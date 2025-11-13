@@ -38,7 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.cartScreen);
+            },
             icon: const Icon(
               Icons.shopping_cart_outlined,
               color: AppColors.textDark,

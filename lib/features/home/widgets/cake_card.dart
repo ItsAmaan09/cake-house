@@ -63,7 +63,7 @@ class CakeCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\₹${cake.price}",
+                        "\₹${cake.price.toInt()}",
                         style: const TextStyle(
                           color: AppColors.primary,
                           fontWeight: FontWeight.w600,
