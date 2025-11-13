@@ -1,3 +1,6 @@
+import 'package:cake_house/data/sample_cake.dart';
+import 'package:cake_house/data/sample_categories.dart';
+import 'package:cake_house/models/cake.dart';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import 'widgets/category_chip.dart';
@@ -13,25 +16,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedCategory = 0;
 
-  final List<String> categories = [
-    'All',
-    'Chocolate',
-    'Vanilla',
-    'Red Velvet',
-    'Strawberry',
-    'Fruit',
-  ];
+  final List<String> categories = SampleCategories.all();
 
-  final List<Map<String, String>> cakes = [
-    {'image': 'assets/cake1.jpg', 'name': 'Chocolate Cake', 'price': '15'},
-    {'image': 'assets/cake2.jpg', 'name': 'Vanilla Delight', 'price': '12'},
-    {'image': 'assets/cake3.jpg', 'name': 'Red Velvet', 'price': '18'},
-    {'image': 'assets/cake4.jpg', 'name': 'Strawberry Crush', 'price': '14'},
-    {'image': 'assets/cake1.jpg', 'name': 'Chocolate Cake', 'price': '15'},
-    {'image': 'assets/cake2.jpg', 'name': 'Vanilla Delight', 'price': '12'},
-    {'image': 'assets/cake3.jpg', 'name': 'Red Velvet', 'price': '18'},
-    {'image': 'assets/cake4.jpg', 'name': 'Strawberry Crush', 'price': '14'},
-  ];
+  final List<Cake> cakes = SampleCake.all();
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +26,21 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text("CakeHouse 🍰",
-            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textDark)),
+        elevation: 0.5,
+        title: const Text(
+          "CakeHouse 🍰",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: AppColors.textDark,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.shopping_cart_outlined, color: AppColors.textDark),
+            icon: const Icon(
+              Icons.shopping_cart_outlined,
+              color: AppColors.textDark,
+            ),
           ),
         ],
       ),
@@ -101,9 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   final cake = cakes[index];
                   return CakeCard(
-                    image: cake['image']!,
-                    name: cake['name']!,
-                    price: cake['price']!,
+                    image: cake.image,
+                    name: cake.name,
+                    price: cake.price,
                     onTap: () {
                       // TODO: Navigate to Cake Detail Screen
                     },
